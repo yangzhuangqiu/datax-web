@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * @author yangzhuangqiu
  * @date 2020/7/9 12:27
  */
-public abstract class AbstractBaseServer extends AbstractServer {
+public abstract class AbstractBaseServer implements AbstractServer {
 
     protected static final Logger logger = LoggerFactory.getLogger(AbstractBaseServer.class);
 

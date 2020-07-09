@@ -1,8 +1,7 @@
 package com.wugui.datax.rpc.remoting.net.impl.netty.http.server;
 
-import com.wugui.datax.rpc.remoting.net.Server;
 import com.wugui.datax.rpc.remoting.net.common.NettyConstant;
-import com.wugui.datax.rpc.remoting.net.impl.AbstractServer;
+import com.wugui.datax.rpc.remoting.net.impl.AbstractBaseServer;
 import com.wugui.datax.rpc.remoting.net.params.Beat;
 import com.wugui.datax.rpc.remoting.provider.XxlRpcProviderFactory;
 import com.wugui.datax.rpc.util.ThreadPoolUtil;
@@ -20,14 +19,13 @@ import io.netty.handler.timeout.IdleStateHandler;
 
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * netty_http
  *
  * @author xuxueli 2015-11-24 22:25:15
  */
-public class NettyHttpServer extends AbstractServer {
+public class NettyHttpServer extends AbstractBaseServer {
 
     @Override
     protected void startServer(XxlRpcProviderFactory xxlRpcProviderFactory) {
@@ -65,7 +63,7 @@ public class NettyHttpServer extends AbstractServer {
             // wait util stop
             future.channel().closeFuture().sync();
 
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             if (e instanceof InterruptedException) {
                 logger.info(">>>>>>>>>>> xxl-rpc remoting server stop.");
             } else {

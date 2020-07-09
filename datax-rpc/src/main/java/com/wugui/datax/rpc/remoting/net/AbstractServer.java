@@ -8,7 +8,7 @@ import com.wugui.datax.rpc.remoting.provider.XxlRpcProviderFactory;
  *
  * @author xuxueli 2015-11-24 20:59:49
  */
-public interface Server {
+public interface AbstractServer {
 
     void setStartedCallback(BaseCallback startedCallback);
 
